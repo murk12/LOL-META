@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .dropbtn {
+      background-color: #3498DB;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .dropbtn:hover,
+    .dropbtn:focus {
+      background-color: #2980B9;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown a:hover {
+      background-color: #ddd;
+    }
+
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="leagueoflegends.com"><img src="https://i.pinimg.com/originals/30/0e/58/300e58c8416a68dcfcf1761501348243.jpg" length="150" width="150"></a>
+
+  <div class="dropdown">
+    <button onclick="ChampionFunction()" class="dropbtn">Champion</button>
+    <div id="ChampionDropdown" class="dropdown-content">
+      <a href="#home">ADC</a>
+      <a href="#about">Tank</a>
+      <a href="#contact">Assasin</a>
+      <a href="#buiser">Bruiser</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button onclick="ItemFunction()" class="dropbtn">Dropdown</button>
+    <div id="ItemDropdown" class="dropdown-content">
+      <a href="#thing1">Thing1</a>
+      <a href="#thing2">Thing2</a>
+      <a href="#thing3">Thing3</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button onclick="MetaFunction()" class="dropbtn">Dropdown</button>
+    <div id="MetaDropdown" class="dropdown-content">
+      <a href="#thing1">thing1</a>
+      <a href="#thing2">thing2</a>
+      <a href="#thing3">thing3</a>
+    </div>
+  </div>
+
+  <script>
+    function ChampionFunction() {
+      document.getElementById("ChampionDropdown").classList.toggle("show");
+    }
+
+    function ItemFunction() {
+      document.getElementById("ItemDropdown").classList.toggle("show");
+    }
+
+    function MetaFunction() {
+      document.getElementById("MetaDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+
+</body>
+
+</html>
